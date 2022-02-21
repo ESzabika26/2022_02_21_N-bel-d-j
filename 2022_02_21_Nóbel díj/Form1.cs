@@ -20,7 +20,7 @@ namespace _2022_02_21_Nóbel_díj
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,5 +35,22 @@ namespace _2022_02_21_Nóbel_díj
                 MessageBox.Show("Hiba! Az évszám nem megfelelő!", "Mentés", MessageBoxButtons.OK);
                 return;
             }
+            try
+            {
+                StreamWriter sw = new StreamWriter("uj_dijazott.txt");
+                sw.WriteLine("Év;Név;SzületésHalálozás;Országkód");
+                sw.WriteLine($"{textBox1.Text};{textBox2.Text};{textBox3.Text};{textBox4.Text}");
+                sw.Close();
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba az állomány írásánál!", "Mentés", MessageBoxButtons.OK);
+            }
+
+        }
     }
 }
