@@ -20,12 +20,16 @@ namespace _2022_02_21_Nóbel_díj
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            File.ReadAllLines("orvosi_nobeldíjak.txt").ToList();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if (textBox1.Text.Length < 1 || textBox2.Text.Length < 1 || textBox3.Text.Length < 1 || textBox4.Text.Length < 1)
+            {
+                MessageBox.Show("Töltsön ki minden mezőt!", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
     }
 }
