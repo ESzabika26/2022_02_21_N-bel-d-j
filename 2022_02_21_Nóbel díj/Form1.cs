@@ -27,9 +27,13 @@ namespace _2022_02_21_Nóbel_díj
         {
             if (textBox1.Text.Length < 1 || textBox2.Text.Length < 1 || textBox3.Text.Length < 1 || textBox4.Text.Length < 1)
             {
-                MessageBox.Show("Töltsön ki minden mezőt!", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Töltsön ki minden mezőt!", "Mentés", MessageBoxButtons.OK);
                 return;
             }
-        }
+            if (int.Parse(textBox1.Text) < 1989)
+            {
+                MessageBox.Show("Hiba! Az évszám nem megfelelő!", "Mentés", MessageBoxButtons.OK);
+                return;
+            }
     }
 }
